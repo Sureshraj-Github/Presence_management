@@ -1,0 +1,70 @@
+{% load static %} 
+<!doctype html>
+<html>
+    <head><title>user login</title>
+       
+        <!-- Main Stylesheet File -->
+        <link href="{% static 'assets/cssdashboard/style1.css' %}" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="hero" >
+           
+            <div class="form-box">
+                
+
+                <div class="button-box">
+
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                    <button type="button" class="toggle-btn" onclick="register()">Register</button>
+    
+                </div>
+                <form action="/user" method="POST" id="login" class="input-group">
+                    {% csrf_token %}
+                    <input type="text" name="userid" class="input-field" placeholder="User Id" required>
+                    <input type="password" name="enterpassword" class="input-field" placeholder="Enter Password" required><br><br>
+                    <input type="checkbox" class="check =-box" ><spam>Remember Password </spam><br><br><br>
+                   <a href="{% url 'userindex' %}"> <button type="submit" class="submit-btn">Log in</button></a><br><br>
+                   <center><h4 style="color:red"> {{msg}} </h4><br></center>
+                    <center>  <a href="{% url 'index' %}" input type="submit" class="butto" value="Sign Up"  >HOME</a></center>
+                
+             </form>
+
+             <form action="/userreg" method="POST" id="register" class="input-group">
+                 {% csrf_token %}
+                 <input type="text" name="userid" class="input-field" placeholder="User Id" required>
+                 <input type="email"name="emailid" class="input-field" placeholder="Email Id" required>
+                 <input type="password" name="enterpassword" class="input-field" placeholder="Enter Password" required><br><br>
+                 <input type="checkbox" class="check =-box" required><spam> I agree to the terms & Conditions </spam><br><br>
+                 <a href="{% url 'user' %}"><button type="submit" class="submit-btn">Register</button></a><br><br>
+                 <center>  <a href="{% url 'index' %}" input type="submit" class="butto" value="Sign Up"  >HOME</a></center>
+                
+          </form>
+
+            </div>
+
+    </div>
+    
+        </div>
+        <script>
+            var x=document.getElementById("login");
+            var y=document.getElementById("register");
+            var z=document.getElementById("btn");
+    
+            function register(){
+                x.style.left = "-400px";
+                y.style.left = "50px";
+                z.style.left = "110px";
+            }
+            function login(){
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0px";
+            }
+    
+        </script>
+        
+        
+    </body>
+</html>

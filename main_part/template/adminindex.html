@@ -1,0 +1,713 @@
+{%  load static %} 
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from www.radixtouch.in/templates/admin/Worksbot/source/light/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Feb 2021 12:19:25 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Presence Management System</title>
+    <!-- Favicon-->
+    <!-- Plugins Core Css -->
+    <link href="{% static 'assets/css/app.min.css' %}" rel="stylesheet">
+    <!-- Custom Css -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+    <!-- Theme style. You can choose a theme from css/themes instead of get all themes -->
+    <link href="{% static 'assets/css/styles/all-themes.css' %}" rel="stylesheet" />
+</head>
+
+<body class="light">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t-30">
+                <img class="loading-img-spin" src="{% static 'assets/images/loading.png' %}" alt="admin">
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" onClick="return false;" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"
+                    aria-expanded="false"></a>
+                <a href="#" onClick="return false;" class="bars"></a>
+                <a class="navbar-brand" href="{% url 'adminindex' %}">
+                    <img src="{% static 'assets/images/logo.png' %}" alt="" />
+                    <span class="logo-name">Attendance</span>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <a href="#" onClick="return false;" class="sidemenu-collapse">
+                            <i class="nav-hdr-btn ti-align-left"></i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Full Screen Button -->
+                    <li class="fullscreen">
+                        <a href="javascript:;" class="fullscreen-btn">
+                            <i class="nav-hdr-btn ti-fullscreen"></i>
+                        </a>
+                    </li>
+                    <!-- #END# Full Screen Button -->
+                    <!-- #START# Notifications-->
+                    <li class="dropdown">
+                        <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="nav-hdr-btn ti-bell"></i>
+                       		<span class="notify"></span>
+                            <span class="heartbeat"></span>
+                        </a>
+                        <ul class="dropdown-menu pullDown">
+                            <li class="header">NOTIFICATIONS</li>
+                            <li class="body">
+                                <ul class="menu">
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="{% static 'assets/images/user/user1.jpg' %}" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">Sarah Smith</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> 14 mins ago
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="{% static 'assets/images/user/user2.jpg' %}" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">Airi Satou</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> 22 mins ago
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="{% static 'assets/images/user/user3.jpg" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">John Doe</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> 3 hours ago
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="{% static 'assets/images/user/user4.jpg' %}" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">Ashton Cox</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> 2 hours ago
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="{% static 'assets/images/user/user5.jpg' %}" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">Cara Stevens</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> 4 hours ago
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="{% static 'assets/images/user/user6.jpg' %}" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">Charde Marshall</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> 3 hours ago
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="{% static 'assets/images/user/user7.jpg' %}" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">John Doe</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> Yesterday
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="#" onClick="return false;">View All Notifications</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- #END# Notifications-->
+                    <li class="dropdown user_profile">
+                        <div class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="{% static 'assets/images/user.jpg' %}" alt="user">
+                        </div>
+                        <ul class="dropdown-menu pullDown">
+                            <li class="body">
+                                <ul class="user_dw_menu">
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <i class="material-icons">person</i>Profile
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <i class="material-icons">feedback</i>Feedback
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <i class="material-icons">help</i>Help
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'admin_dashboard' %}" >
+                                            <i class="material-icons">power_settings_new</i>Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- #END# Tasks -->
+                    <li class="pull-right">
+                        <a href="#" onClick="return false;" class="js-right-sidebar" data-close="true">
+                            <i class="nav-hdr-btn ti-layout-grid2"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <div>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                	<li>
+	                <div class="sidebar-profile clearfix">
+                        <div class="profile-img">
+                            <img src="{% static 'assets/images/usrbig.jpg' %}" alt="profile">
+                        </div>
+                        <div class="profile-info">
+                            
+                           <center> <h5>Welcome Admin {{val1.userid}} !</h5></center>
+                        </div>
+                    </div>
+                </li>
+               
+	               
+	               
+                    <li class="active">
+                        <a href="{% url 'adminindex' %}"  >
+                            <i class="menu-icon ti-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                       
+                    </li>
+                    <li>
+                        <a href="{% url 'adminuserlist1' %}"  >
+                            <i class="menu-icon ti-user"></i>
+                            <span>User</span>
+                        </a>
+                        
+                    </li>
+                    <li>
+                        <a href="{% url 'adminDesignation1' %}" >
+                            <i class="menu-icon ti-pin"></i>
+                            <span>Designation</span>
+                        </a>
+                      
+                    </li>
+                    <li>
+                        <a href="{% url 'adminholiday' %}"  >
+                            <i class="menu-icon ti-dribbble"></i>
+                            <span>Holiday</span>
+                        </a>
+                        
+                    </li>
+                    <li>
+                        <a href="{% url 'adminleave' %}" onClick="return false;" class="menu-toggle">
+                            <i class="menu-icon ti-announcement"></i>
+                            <span>Leave</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="{% url 'adminleave' %}">Leave</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'admincategory1' %}">Category</a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'adminnotice1' %}" >
+                            <i class="menu-icon ti-clipboard"></i>
+                            <span>Notice</span>
+                        </a>
+                     
+                    </li>
+                    <li>
+                        <a href="{% url 'adminindividual1' %}" onClick="return false;" class="menu-toggle" >
+                            <i class="menu-icon ti-menu-alt"></i>
+                            <span>Report</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="{% url 'adminindividual1' %}">Individual</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'adminsummary1' %}">Summary</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'adminupdateinfo' %}" >
+                            <i class="menu-icon ti-check"></i>
+                            <span>Update Info</span>
+                        </a>
+                       
+                    </li>
+                    <li>
+                        <a href="{% url 'adminupdatepassword' %}" >
+                            <i class="menu-icon ti-pencil-alt"></i>
+                            <span>Update Password</span>
+                        </a>
+                    </li>
+                </li>
+            </ul>
+        </div>
+            <!-- #Menu -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+        <!-- Right Sidebar -->
+        <aside id="rightsidebar" class="right-sidebar">
+            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                <li role="presentation">
+                    <a href="#skins" data-toggle="tab" class="active">SKINS</a>
+                </li>
+                <li role="presentation">
+                    <a href="#settings" data-toggle="tab">SETTINGS</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane in active in active stretchLeft" id="skins">
+                    <div class="demo-skin">
+                        <div class="rightSetting">
+                            <p>GENERAL SETTINGS</p>
+                            <ul class="setting-list list-unstyled m-t-20">
+                                <li>
+                                    <div class="form-check">
+                                        <div class="form-check m-l-10">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox" value="" checked> Save
+                                                History
+                                                <span class="form-check-sign">
+                                                    <span class="check"></span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check">
+                                        <div class="form-check m-l-10">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox" value="" checked> Show
+                                                Status
+                                                <span class="form-check-sign">
+                                                    <span class="check"></span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check">
+                                        <div class="form-check m-l-10">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox" value="" checked> Auto
+                                                Submit Issue
+                                                <span class="form-check-sign">
+                                                    <span class="check"></span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check">
+                                        <div class="form-check m-l-10">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox" value="" checked> Show
+                                                Status To All
+                                                <span class="form-check-sign">
+                                                    <span class="check"></span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rightSetting">
+                            <p>SIDEBAR MENU COLORS</p>
+                            <button type="button" class="btn btn-sidebar-light btn-border-radius p-l-20 p-r-20">Light</button>
+                            <button type="button" class="btn btn-sidebar-dark btn-default btn-border-radius p-l-20 p-r-20">Dark</button>
+                        </div>
+                        <div class="rightSetting">
+                            <p>THEME COLORS</p>
+                            <button type="button" class="btn btn-theme-light btn-border-radius p-l-20 p-r-20">Light</button>
+                            <button type="button" class="btn btn-theme-dark btn-default btn-border-radius p-l-20 p-r-20">Dark</button>
+                        </div>
+                        <div class="rightSetting">
+                            <p>SKINS</p>
+                            <ul class="demo-choose-skin choose-theme list-unstyled">
+                                <li data-theme="black" class="actived">
+                                    <div class="black-theme"></div>
+                                </li>
+                                <li data-theme="white">
+                                    <div class="white-theme white-theme-border"></div>
+                                </li>
+                                <li data-theme="purple">
+                                    <div class="purple-theme"></div>
+                                </li>
+                                <li data-theme="blue">
+                                    <div class="blue-theme"></div>
+                                </li>
+                                <li data-theme="cyan">
+                                    <div class="cyan-theme"></div>
+                                </li>
+                                <li data-theme="green">
+                                    <div class="green-theme"></div>
+                                </li>
+                                <li data-theme="orange">
+                                    <div class="orange-theme"></div>
+                                </li>
+                            </ul>
+                        </div>
+                      
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane stretchRight" id="settings">
+                    <div class="demo-settings">
+                        <p>GENERAL SETTINGS</p>
+                        <ul class="setting-list">
+                            <li>
+                                <span>Report Panel Usage</span>
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        <span class="lever switch-col-green"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Email Redirect</span>
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox">
+                                        <span class="lever switch-col-blue"></span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>SYSTEM SETTINGS</p>
+                        <ul class="setting-list">
+                            <li>
+                                <span>Notifications</span>
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        <span class="lever switch-col-purple"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Auto Updates</span>
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        <span class="lever switch-col-cyan"></span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>ACCOUNT SETTINGS</p>
+                        <ul class="setting-list">
+                            <li>
+                                <span>Offline</span>
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        <span class="lever switch-col-red"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Location Permission</span>
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox">
+                                        <span class="lever switch-col-lime"></span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- #END# Right Sidebar -->
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <ul class="breadcrumb breadcrumb-style">
+                            <li class="breadcrumb-item 	bcrumb-1">
+                                <a href="{% url 'adminindex' %}">
+                                    <i class="material-icons">home</i>
+                                    Home</a>
+                            </li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Widgets -->
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="info-box7 l-bg-green order-info-box7">
+                        <div class="info-box7-block">
+                            <h4 class="text-right">Total User</h4>
+                            <h2 class="text-right"><i class="fas fa-user-alt pull-left"></i><span>26</span></h2>
+                            <p class="m-b-0">26 Active User</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="info-box7 l-bg-purple order-info-box7">
+                        <div class="info-box7-block">
+                            <h4 class="text-right">Holiday This Year</h4>
+                            <h2 class="text-right"><i class="fas fa-umbrella-beach pull-left"></i><span>19</span></h2>
+                            <p class="m-b-0">8 Holiday This Month</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="info-box7 l-bg-orange order-info-box7">
+                        <div class="info-box7-block">
+                            <h4 class="text-right">Leave This Year</h4>
+                            <h2 class="text-right"><i class="fas fa-calendar-alt pull-left"></i><span>67</span></h2>
+                            <p class="m-b-0">20 Leave Granted</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="info-box7 l-bg-cyan order-info-box7">
+                        <div class="info-box7-block">
+                            <h4 class="text-right">Present Today</h4>
+                            <h2 class="text-right"><i class="fas fa-award pull-left"></i><span>1</span></h2>
+                            <p class="m-b-0">25 User Absent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Widgets -->
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="card">
+                        <div class="header">
+                           
+                             <div class="body">
+                            <div class="recent-report__chart">
+                                <canvas id="doughut-chart"></canvas>
+                            </div>
+                        </div>
+                    
+                            <p> Active User</p>
+                            <p>09:46:10  Demo User</p>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="card">
+                        <div class="header">
+                        <table>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Worked</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Demo User</td>
+                                <td>389:25:21</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Test23eq</td>
+                                <td>02:36:08</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>rama</td>
+                                <td>01:17:24</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>ahmed</td>
+                                <td>00:09:19</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>munna</td>
+                                <td>00:00:39</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>luis</td>
+                                <td>00:00:16</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>test12345</td>
+                                <td>00:00:00</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Gabriel Freitas</td>
+                                <td>00:00:00</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>aaaaaaa</td>
+                                <td>00:00:00</td>
+                            </tr>
+                        </table>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-20 col-sm-20 col-md-16 col-lg-16">
+                <div class="card">
+                    <div class="header">
+
+                        <p>Recent Notices</p>
+                       
+                        {% for i in var3 %}
+
+                        <p><span style="font-weight: bold;">{{i.subject}}        </span></p> 
+                       
+                        
+
+                        <p>{{i.message}}</p>
+                        <hr size="20" width="1000">
+
+
+                        <div class="dropdown">
+                            
+                                    
+                                       
+                               
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <i class="material-icons">more_horz</i></button>
+                               </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="adnotice_edit/{{i.id}}"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp; Edit</a></li>
+                                <li><a href="adnotice_delete/{{i.id}}"><i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp; Delete</a></li>
+                               
+                                
+                            </ul>
+                        </div>
+
+                        {% endfor %}
+
+                    </div>
+                        </div>
+                    </div>
+
+               
+            </div>
+            
+        </div>
+    </section>
+
+   
+    <!-- Plugins Js -->
+    <script src="{% static 'assets/js/app.min.js' %}"></script>
+    <script src="{% static 'assets/js/chart.min.js' %}"></script>
+    <!-- Custom Js -->
+    <script src="{% static 'assets/js/admin.js' %}"></script>
+    <script src="{% static 'assets/js/bundles/amcharts4/core.js' %}"></script>
+    <script src="{% static 'assets/js/bundles/amcharts4/charts.js' %}"></script>
+    <script src="{% static 'assets/js/bundles/amcharts4/animated.js' %}"></script>
+    <script src="{% static 'assets/js/pages/index.js' %}"></script>
+     <script src="{% static 'assets/js/pages/charts/chartjs.js' %}"></script>
+</body>
